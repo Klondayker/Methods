@@ -16,13 +16,14 @@ public class Main {
         assertEquals("#4", false, actual);
     }
     static boolean hasDuplicates (byte [] array){
-        boolean[] hasDuplicates = new boolean[128];
+        boolean[] hasDuplicates = new boolean[256];
         for (byte value : array){
-            if (hasDuplicates[value]) {
+            int index = value + 128;
+            if (hasDuplicates[index]) {
                 return true;
                 
             }else{
-                hasDuplicates[value] = true;
+                hasDuplicates[index] = true;
             }
         }
         return false;
